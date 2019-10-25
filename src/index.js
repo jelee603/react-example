@@ -4,17 +4,17 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import HelloMessage from "./HelloMessage";
-import TodoApp from "./TodoApp";
+import HelloMessage from "./components/HelloMessage";
+import TodoApp from "./components/TodoApp";
 
 ReactDOM.render(
-    <Router>
-        <div>
+    <div>
+        <Router>
             <App />
             <Route Path="/" component={TodoApp} />
             <Route Path="/message" component={HelloMessage} />
-        </div>
-    </Router>,
+        </Router>
+    </div>,
     document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

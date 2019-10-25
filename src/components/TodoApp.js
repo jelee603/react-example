@@ -5,7 +5,6 @@ class TodoApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {items: [], text: ''};
-        console.log(this)
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -14,7 +13,6 @@ class TodoApp extends React.Component {
         return (
             <div>
                 <h3>TODO</h3>
-                <TodoList items={this.state.items}/>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="new-todo">
                         TodoList
@@ -28,6 +26,7 @@ class TodoApp extends React.Component {
                         Add ${this.state.items.length + 1}
                     </button>
                 </form>
+                <TodoList items={this.state.items}/>
             </div>
         )
     }
