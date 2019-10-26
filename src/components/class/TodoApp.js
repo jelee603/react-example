@@ -7,6 +7,7 @@ class TodoApp extends React.Component {
         this.state = {items: [], text: ''};
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.deleteList = this.deleteList.bind(this);
     }
 
     render() {
@@ -26,7 +27,10 @@ class TodoApp extends React.Component {
                         Add ${this.state.items.length + 1}
                     </button>
                 </form>
-                <TodoList items={this.state.items}/>
+                <TodoList
+                    items={this.state.items}
+                    delete={this.deleteList}
+                />
             </div>
         )
     }
@@ -50,6 +54,15 @@ class TodoApp extends React.Component {
             items: state.items.concat(newItem),
             text: ''
         }))
+    }
+
+    deleteList (idx) {
+        const list = [...this.state.items]
+        list.splice(idx, 1);
+
+        this.setState({
+            items: list
+        })
     }
 }
 

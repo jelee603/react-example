@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 function App() {
   return (
       <div>
+      <h5>Class Component</h5>
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -12,6 +13,11 @@ function App() {
         <li>
           <Link to="/message">Message</Link>
         </li>
+      </ul>
+      <h5>Functional Component</h5>
+      <ul>
+        <li><Link to="/class_home">Home</Link></li>
+        <li><Link to="/class_message">Message</Link></li>
       </ul>
       </div>
   );
