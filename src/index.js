@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import HelloMessage from "./components/HelloMessage";
 import TodoApp from "./components/TodoApp";
 
@@ -11,8 +11,12 @@ ReactDOM.render(
     <div>
         <Router>
             <App />
-            <Route Path="/" component={TodoApp} />
-            <Route Path="/message" component={HelloMessage} />
+            <Switch>
+                <Route exact path="/" component={TodoApp} />
+                <Route path="/message">
+                    <HelloMessage name="지으니지으니"/>
+                </Route>
+            </Switch>
         </Router>
     </div>,
     document.getElementById('root'));

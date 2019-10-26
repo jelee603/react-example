@@ -7,19 +7,26 @@ class TodoList extends React.Component {
     }
 
     render() {
+        const list = this.props.items.map((item, idx) => {
+            return (
+                <li key={item.id} idx={idx}>
+                    {item.text}
+                    <button className="btn_delete_list">삭제</button>
+                </li>
+            )
+        })
         return (
-            <ul>
-                {this.props.items.map(item => (
-                    <li key={item.id}>{item.text} <button onClick={this.handleRemove}>삭제</button></li>
-                ))}
+            <ul onClick={this.handleRemove}>
+                {list}
             </ul>
         )
     }
 
-    handleRemove(e) {
-        console.log(e, this.props.items)
-
-
+    handleRemove({target}) {
+        if (target.className === 'btn_delete_list') {
+            var idx = target.parentElement.getAttribute('idx');
+            this.props.delete(idx);
+        }
     }
 }
 
