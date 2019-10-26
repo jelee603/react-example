@@ -24,7 +24,7 @@ class TodoList extends React.Component {
 
     handleRemove({target}) {
         if (target.className === 'btn_delete_list') {
-            var idx = target.parentElement.getAttribute('idx');
+            const idx = target.parentElement.getAttribute('idx');
             this.props.delete(idx);
         }
     }
