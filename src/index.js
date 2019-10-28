@@ -18,8 +18,8 @@ ReactDOM.render(
                 <Route path="/message">
                     <HelloMessage name="지으니지으니"/>
                 </Route>
-                <Route exact path="/class_home" component={FunctionTodoApp} />
-                <Route path="/class_message">
+                <Route exact path="/function_home" component={FunctionTodoApp} />
+                <Route path="/function_message">
                     <FunctionHelloMessage name="선호선호"/>
                 </Route>
             </Switch>

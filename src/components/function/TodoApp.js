@@ -35,7 +35,7 @@ function TodoApp () {
     // render
     return (
         <div>
-            <h3>TODO</h3>
+            <h3>FUNCTION TODO</h3>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="new-todo">
                     TodoList

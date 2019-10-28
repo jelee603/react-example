@@ -16,8 +16,8 @@ function App() {
       </ul>
       <h5>Functional Component</h5>
       <ul>
-        <li><Link to="/class_home">Home</Link></li>
-        <li><Link to="/class_message">Message</Link></li>
+        <li><Link to="/function_home">Home</Link></li>
+        <li><Link to="/function_message">Message</Link></li>
       </ul>
       </div>
   );
